@@ -1,0 +1,42 @@
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <div class="badge">{{ 'hero.badge' | translate }}</div>
+            <h1 class="hero-title">
+                {{ 'hero.title' | translate }}
+            </h1>
+            <p class="hero-description">
+                {{ 'hero.description' | translate }}
+            </p>
+            <div class="cta-group">
+                <a routerLink="/projects" class="btn btn-primary">{{ 'hero.viewProjects' | translate }}</a>
+                <a href="#" (click)="downloadResume($event)" class="btn btn-outline">{{ 'hero.downloadResume' |
+                    translate }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="glass-card">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>{{ 'about.title' | translate }}</h2>
+                    <p>{{ 'about.p1' | translate }}</p>
+                    <p>{{ 'about.p2' | translate }}</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">{{ 'about.yearsExp' | translate }}</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">{{ 'about.projects' | translate }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

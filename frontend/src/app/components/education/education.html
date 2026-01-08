@@ -1,0 +1,37 @@
+<section id="education" class="section">
+    <div class="container">
+
+        <!-- Degrees Section -->
+        <h2 class="section-title animate-fade-in">{{ 'education.title' | translate }}</h2>
+        <div class="education-grid" *ngIf="degrees.length > 0">
+            <a [href]="edu.url" target="_blank" rel="noopener noreferrer" class="edu-card animate-fade-in"
+                *ngFor="let edu of degrees; let i = index" [style.animation-delay]="(i * 0.1) + 's'">
+                <div class="edu-year">{{ edu.graduationYear }}</div>
+                <h3>{{ edu.degree }}</h3>
+                <p class="degree">{{ edu.institution }}</p>
+            </a>
+        </div>
+
+        <!-- Spacer -->
+        <div style="height: 60px;"></div>
+
+        <!-- Certifications Section -->
+        <div *ngIf="certifications.length > 0">
+            <h3 class="section-title animate-fade-in" style="font-size: 36px; margin-bottom: 30px;">
+                Certifications
+            </h3>
+            <div class="education-grid">
+                <a [href]="cert.url" target="_blank" rel="noopener noreferrer" class="edu-card animate-fade-in"
+                    *ngFor="let cert of certifications; let j = index" [style.animation-delay]="(j * 0.1) + 's'">
+                    <div class="edu-year">{{ cert.graduationYear }}</div>
+                    <h3>{{ cert.degree }}</h3>
+                    <p class="degree">{{ cert.institution }}</p>
+                </a>
+            </div>
+        </div>
+
+        <div *ngIf="degrees.length === 0 && certifications.length === 0" class="glass-card">
+            <p>Loading education...</p>
+        </div>
+    </div>
+</section>

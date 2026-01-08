@@ -1,0 +1,25 @@
+.footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 14px;
+    font-family: var(--font-display);
+    border-top: 1px solid var(--border-color);
+    margin-top: 80px;
+}
+
+.social-links {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.social-links a {
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}

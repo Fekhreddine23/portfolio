@@ -1,0 +1,31 @@
+<section id="experience" class="section">
+    <div class="container">
+        <h2 class="section-title animate-fade-in">{{ 'experience.title' | translate }}</h2>
+
+        <div class="experience-timeline" *ngIf="experiences.length > 0">
+            <div class="timeline-item animate-fade-in" *ngFor="let job of experiences; let i = index"
+                [style.animation-delay]="(i * 0.2) + 's'">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div>
+                            <span class="role">{{ job.role }}</span>
+                            <span class="company">{{ job.company }}</span>
+                        </div>
+                        <span class="date">{{ job.duration }}</span>
+                    </div>
+
+                    <ul class="description-list">
+                        <li *ngFor="let responsibility of getResponsibilities(job)">{{ responsibility }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="experiences.length === 0" class="glass-card">
+            <p>Loading experience...</p>
+        </div>
+    </div>
+</section>

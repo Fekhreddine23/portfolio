@@ -1,0 +1,75 @@
+<section id="contact" class="section">
+    <div class="container contact-container">
+        <p class="section-subtitle animate-fade-in">{{ 'contact.subtitle' | translate }}</p>
+        <h2 class="section-title animate-fade-in" style="animation-delay: 0.1s">{{ 'contact.title' | translate }}</h2>
+
+        <div class="contact-content animate-fade-in" style="animation-delay: 0.2s">
+            <form (ngSubmit)="onSubmit()" #contactForm="ngForm" *ngIf="!success" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" [(ngModel)]="message.name" required #name="ngModel"
+                        class="form-control" placeholder="Your Name">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="validation-error">
+                        Name is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" [(ngModel)]="message.email" required email
+                        #email="ngModel" class="form-control" placeholder="your@email.com">
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="validation-error">
+                        <div *ngIf="email.errors?.['required']">Email is required.</div>
+                        <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" [(ngModel)]="message.subject" required
+                        #subject="ngModel" class="form-control" placeholder="Project Inquiry">
+                    <div *ngIf="subject.invalid && (subject.dirty || subject.touched)" class="validation-error">
+                        Subject is required.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" [(ngModel)]="message.message" required #msg="ngModel"
+                        class="form-control" rows="5" placeholder="How can I help you?"></textarea>
+                    <div *ngIf="msg.invalid && (msg.dirty || msg.touched)" class="validation-error">
+                        Message is required.
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid || loading">
+                        <span *ngIf="!loading">{{ 'contact.submit' | translate }}</span>
+                        <span *ngIf="loading">{{ 'contact.sending' | translate }}</span>
+                    </button>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/fekhreddine-arrag-developpeurfullstack/" target="_blank"
+                            rel="noopener noreferrer" class="icon-link">
+                            LinkedIn
+                        </a>
+                        <a href="https://github.com/Fekhreddine23" target="_blank" rel="noopener noreferrer"
+                            class="icon-link">
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div *ngIf="error" class="error-message">
+                    Oops! Something went wrong. Please try again or contact me directly on LinkedIn.
+                </div>
+            </form>
+
+            <div *ngIf="success" class="success-message">
+                <h3>{{ 'contact.successTitle' | translate }}</h3>
+                <p>{{ 'contact.successBody' | translate }}</p>
+                <button class="btn btn-outline" (click)="success = false">{{ 'contact.sendAgain' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</section>

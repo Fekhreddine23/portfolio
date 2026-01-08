@@ -1,0 +1,40 @@
+<header class="header">
+    <div class="glass-nav">
+        <a routerLink="/" class="logo">FA.</a>
+
+        <button class="hamburger-btn" [class.active]="isMenuOpen" (click)="toggleMenu()" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-wrapper" [class.open]="isMenuOpen">
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+                            (click)="closeMenu()">{{ 'nav.home' | translate }}</a></li>
+                    <li><a routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.experience'
+                            | translate }}</a></li>
+                    <li><a routerLink="/education" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.education' |
+                            translate }}</a></li>
+                    <li><a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.skills' |
+                            translate }}</a></li>
+                    <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.projects' |
+                            translate }}</a></li>
+                    <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">{{ 'nav.contact' |
+                            translate }}</a></li>
+                </ul>
+            </nav>
+            <div class="controls">
+                <button class="icon-btn" (click)="themeService.toggleTheme()"
+                    [attr.aria-label]="themeService.theme() === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'">
+                    <span *ngIf="themeService.theme() === 'dark'">☀️</span>
+                    <span *ngIf="themeService.theme() === 'light'">🌙</span>
+                </button>
+                <button class="lang-btn" (click)="translationService.toggleLang()">
+                    {{ translationService.currentLang() === 'en' ? 'FR' : 'EN' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

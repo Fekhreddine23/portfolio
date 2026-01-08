@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: portfolio-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - portfolio-network
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:portfolio_db
+      - SPRING_H2_CONSOLE_ENABLED=true
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
+
+  frontend:
+    build: ./frontend
+    container_name: portfolio-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge

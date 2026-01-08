@@ -1,0 +1,17 @@
+<section id="skills" class="section">
+    <div class="container">
+        <h2 class="section-title animate-fade-in">{{ 'skills.title' | translate }}</h2>
+        <div class="skills-grid">
+            <div class="skill-category animate-fade-in" *ngFor="let category of categories; let i = index"
+                [style.animation-delay]="(i * 0.1) + 's'">
+                <h3>{{ category }}</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag" *ngFor="let skill of skills[category]">{{ skill }}</span>
+                </div>
+            </div>
+            <div *ngIf="categories.length === 0">
+                <p>Loading skills...</p>
+            </div>
+        </div>
+    </div>
+</section>
