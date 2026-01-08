@@ -25,6 +25,8 @@ Built with **Angular 17+** (Frontend) and **Spring Boot 3** (Backend), fully con
 -   **Docker Compose**: One command to launch the full stack (Frontend + Backend + Database).
 -   **Nginx**: Serves the Angular app and acts as a reverse proxy for the API (resolving CORS).
 -   **Multi-Stage Builds**: Optimized Docker images for production.
+-   **CI/CD Pipeline**: Automated build and verification with GitHub Actions.
+-   **Swagger UI**: Interactive API documentation available at `/swagger-ui.html`.
 
 ---
 
