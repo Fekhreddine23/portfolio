@@ -29,6 +29,8 @@
     --gradient-main: linear-gradient(135deg, #7042f8 0%, #00c6ff 100%);
     --gradient-text: linear-gradient(to right, #e2d1ff, #7042f8, #00c6ff);
     --gradient-card: radial-gradient(circle at top left, rgba(112, 66, 248, 0.15), transparent 50%);
+
+    --nav-bg-mobile: rgba(3, 0, 20, 0.98);
 }
 
 [data-theme="light"] {
@@ -43,6 +45,7 @@
     --text-tertiary: #94a3b8;
     --border-color: rgba(0, 0, 0, 0.15);
     --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --nav-bg-mobile: rgba(255, 255, 255, 0.98);
 }
 
 [data-theme="light"] h2 {
