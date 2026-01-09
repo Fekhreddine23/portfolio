@@ -41,9 +41,27 @@
     --text-primary: #0f172a;
     --text-secondary: #475569;
     --text-tertiary: #94a3b8;
-    --border-color: rgba(0, 0, 0, 0.08);
+    --border-color: rgba(0, 0, 0, 0.15);
     --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+
+[data-theme="light"] h2 {
+    background: none;
+    -webkit-text-fill-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .hero-title {
+    background: none;
+    -webkit-text-fill-color: var(--text-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .btn-primary {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
 
 :root {
     /* Typography */
