@@ -50,7 +50,7 @@ export class Contact {
 
     emailjs.send(serviceID, templateID, templateParams, publicKey)
       .then(
-        (response) => {
+        (response: any) => {
           this.ngZone.run(() => {
             this.loading = false;
             this.success = true;
@@ -59,7 +59,7 @@ export class Contact {
             console.log('SUCCESS!', response.status, response.text);
           });
         },
-        (err) => {
+        (err: any) => {
           this.ngZone.run(() => {
             this.loading = false;
             this.error = true;
