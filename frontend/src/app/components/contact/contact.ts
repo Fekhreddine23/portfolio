@@ -37,7 +37,7 @@ export class Contact {
     this.success = false;
 
     // EmailJS Configuration
-    const serviceID = 'service_2sz03ma';
+    const serviceID = 'service_queyj2r';
     const templateID = 'template_d5hy236';
     const publicKey = 'kWyxCaeBrzLZ7L2ek';
 
